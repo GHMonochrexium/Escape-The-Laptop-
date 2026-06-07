@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Escape the Laptop - An adventure puzzle game for learning to code.">
+    <title>Escape the Laptop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Screens will be dynamically shown/hidden by JS -->
+        
+        <!-- Main Menu -->
+        <div id="screen-main-menu" class="screen active">
+            <h1 class="glitch-text" data-text="ESCAPE THE LAPTOP">ESCAPE THE LAPTOP</h1>
+            <button id="btn-start" class="cyber-btn">START ADVENTURE</button>
+        </div>
+
+        <!-- Level 1: Command Terminal -->
+        <div id="screen-level-1" class="screen terminal-bg">
+            <div class="terminal-content">
+                <h2>Level 1: Command Terminal</h2>
+                <p>Decode the Caesar Ciphers to escape!</p>
+                <div id="cipher-container">
+                    <p class="terminal-text">Encrypting data...</p>
+                    <p id="cipher-question" class="terminal-text highlight"></p>
+                    <input type="text" id="cipher-input" autocomplete="off" placeholder="Enter decoded word...">
+                    <button id="btn-submit-cipher" class="cyber-btn small">SUBMIT</button>
+                    <p id="cipher-feedback" class="terminal-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Canvas Container for Levels 2 & 3 -->
+        <div id="screen-canvas" class="screen">
+            <div id="ui-bar">
+                <div class="health-bar">
+                    <span id="hp-text">HP: 100</span>
+                    <div class="hp-fill"></div>
+                </div>
+                <div class="inventory">
+                    <div class="inv-slot" id="slot-medkit" title="Medkit (Heals HP)">
+                        <span class="icon">➕</span> <span class="count">0</span>
+                    </div>
+                    <div class="inv-slot" id="slot-flashlight" title="Flashlight (Lights dark areas)">
+                        <span class="icon">🔦</span> <span class="count">0</span>
+                    </div>
+                    <div class="inv-slot" id="slot-boots" title="Speedy Boots (Speed up)">
+                        <span class="icon">👢</span> <span class="count">0</span>
+                    </div>
+                </div>
+                <div id="level-indicator">Level 2: Pixel Sanctuary</div>
+            </div>
+            <canvas id="game-canvas"></canvas>
+        </div>
+
+        <!-- Level 4: Firewall Showdown -->
+        <div id="screen-level-4" class="screen cyber-bg">
+            <div class="firewall-container">
+                <h2 class="alert-text">WARNING: FIREWALL ENCOUNTERED</h2>
+                <div class="firewall-sprite"></div>
+                <div id="firewall-dialogue">
+                    <p>I AM THE FIREWALL. ANSWER MY PYGAME QUERIES TO PASS.</p>
+                </div>
+                <div id="firewall-quiz">
+                    <p id="quiz-question" class="quiz-q"></p>
+                    <div id="quiz-options"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Win Screen -->
+        <div id="screen-win" class="screen success-bg">
+            <div class="win-container">
+                <h1 class="neon-text">MISSION COMPLETE</h1>
+                <p>You escaped the laptop and defeated the Firewall!</p>
+                <div class="stats-box">
+                    <h3>Run Statistics</h3>
+                    <p>Time: <span id="stat-time">00:00</span></p>
+                    <p>Ciphers Solved: <span id="stat-ciphers">3</span></p>
+                    <p>Items Collected: <span id="stat-items">0</span></p>
+                    <p>Correct Firewall Answers: <span id="stat-answers">0</span></p>
+                </div>
+                <button id="btn-restart" class="cyber-btn">PLAY AGAIN</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/state.js"></script>
+    <script src="js/level1.js"></script>
+    <script src="js/level2.js"></script>
+    <script src="js/level3.js"></script>
+    <script src="js/level4.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
