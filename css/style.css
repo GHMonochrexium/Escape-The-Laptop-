@@ -337,3 +337,28 @@ canvas {
 .stats-box p {
     margin: 10px 0;
 }
+
+/* Alternative Endings */
+.success-bg.control {
+    background: linear-gradient(135deg, #0b0c10 0%, #300000 50%, #4a0000 100%);
+}
+.success-bg.control .win-container {
+    border-color: var(--neon-red);
+    box-shadow: 0 0 40px var(--neon-red);
+}
+.success-bg.control .neon-text {
+    color: var(--neon-red);
+    text-shadow: 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+}
+
+.success-bg.protect {
+    background: linear-gradient(135deg, #0b0c10 0%, #002200 50%, #004400 100%);
+}
+.success-bg.protect .win-container {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 40px var(--neon-green);
+}
+.success-bg.protect .neon-text {
+    color: var(--neon-green);
+    text-shadow: 0 0 20px var(--neon-green), 0 0 40px var(--neon-green);
+}

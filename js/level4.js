@@ -70,7 +70,7 @@ function loadFirewallQuestion() {
 function checkFirewallWin() {
     if(GameState.stats.correctFirewallAnswers >= 1) {
         document.getElementById('firewall-dialogue').innerHTML = "<p style='color: var(--neon-green)'>YOU HAVE PROVEN YOUR WORTH. YOU MAY PASS.</p>";
-        setTimeout(showWinScreen, 2000);
+        setTimeout(startLevel5, 2000);
     } else {
         document.getElementById('firewall-dialogue').innerHTML = "<p style='color: var(--neon-red)'>ACCESS DENIED. REBOOTING SEQUENCE...</p>";
         setTimeout(() => {
